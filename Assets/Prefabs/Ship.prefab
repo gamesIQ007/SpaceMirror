@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 9045136433341670153}
   - component: {fileID: 2311001119971472194}
   - component: {fileID: 2187603153497961437}
+  - component: {fileID: 3477301231621235677}
   - component: {fileID: 5356637667479325066}
   - component: {fileID: 3900982521691820986}
   - component: {fileID: 279559273984951226}
@@ -374,6 +375,22 @@ MonoBehaviour:
   m_Mobility: 2500
   m_MaxLinearVelocity: 30
   m_MaxAngularVelocity: 300
+--- !u!114 &3477301231621235677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045136433341670154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57be0896bc460514c874409b5f8b2bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  m_SpriteRenderer: {fileID: 9045136433002449228}
 --- !u!114 &5356637667479325066
 MonoBehaviour:
   m_ObjectHideFlags: 0
