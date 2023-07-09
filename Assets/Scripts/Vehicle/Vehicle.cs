@@ -6,7 +6,7 @@ using Mirror;
 /// <summary>
 /// Транспорт
 /// </summary>
-public class Vehicle : NetworkBehaviour
+public class Vehicle : Destructible
 {
     [Header("Vehicle")]
     /// <summary>
@@ -35,6 +35,11 @@ public class Vehicle : NetworkBehaviour
     /// </summary>
     [SerializeField] private float m_MaxAngularVelocity;
     public float MaxAngularVelocity => m_MaxAngularVelocity;
+
+    /// <summary>
+    /// Турель
+    /// </summary>
+    [SerializeField] private Turret m_Turret;
 
     /// <summary>
     /// Сохранённая ссылка на ригид
@@ -73,6 +78,14 @@ public class Vehicle : NetworkBehaviour
     /// Управление вращательной тягой. От -1.0 до +1.0
     /// </summary>
     public float TorqueControl { get; set; }
+
+    /// <summary>
+    /// Выстрел
+    /// </summary>
+    public void Fire()
+    {
+        m_Turret.CmdFire();
+    }
 
     #endregion
 

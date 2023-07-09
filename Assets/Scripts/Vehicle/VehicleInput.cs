@@ -58,6 +58,11 @@ public class VehicleInput : MonoBehaviour
             torque = -1.0f;
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            m_Player.ActiveVehicle.Fire();
+        }
+
         m_Player.ActiveVehicle.ThrustControl = thrust;
         m_Player.ActiveVehicle.TorqueControl = torque;
     }
