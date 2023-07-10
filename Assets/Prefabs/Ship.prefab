@@ -150,8 +150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.93}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchoredPosition: {x: 0, y: -1.68}
+  m_SizeDelta: {x: 250, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7563370731690133048
 Canvas:
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbda25b1ddead44bbd465112f216712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Destructible: {fileID: 2187603153497961437}
+  m_Vehicle: {fileID: 2187603153497961437}
   m_FillImage: {fileID: 3514956807721164853}
   m_Slider: {fileID: 6534150893869774086}
 --- !u!1 &8988318189223584606
@@ -770,6 +770,7 @@ MonoBehaviour:
   syncInterval: 0
   m_MaxHitPoint: 100
   m_DestroySFX: {fileID: 0}
+  Owner: {fileID: 0}
   m_Mass: 3
   m_Thrust: 5000
   m_Mobility: 2500
@@ -808,6 +809,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  m_Vehicle: {fileID: 2187603153497961437}
   m_SpriteRenderer: {fileID: 9045136433002449228}
 --- !u!114 &5356637667479325066
 MonoBehaviour:

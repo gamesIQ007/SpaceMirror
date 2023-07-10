@@ -12,10 +12,31 @@ public class Player : NetworkBehaviour
     [SerializeField] private Vehicle m_VehiclePrefab;
 
     /// <summary>
+    /// Цвет игрока
+    /// </summary>
+    [SyncVar]
+    private Color m_PlayerColor;
+    public Color PlayerColor => m_PlayerColor;
+
+    /// <summary>
     /// Активный транспорт
     /// </summary>
     public Vehicle ActiveVehicle { get; set; }
 
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+
+        m_PlayerColor = PlayerColorPalette.Instance.TakeRandomColor();
+    }
+
+    public override void OnStopServer()
+    {
+        base.OnStopServer();
+
+        PlayerColorPalette.Instance.PutColor(m_PlayerColor);
+    }
 
     public override void OnStartClient()
     {
@@ -50,6 +71,7 @@ public class Player : NetworkBehaviour
         NetworkServer.Spawn(playerVehicle, netIdentity.connectionToClient);
 
         ActiveVehicle = playerVehicle.GetComponent<Vehicle>();
+        ActiveVehicle.Owner = netIdentity;
 
         RpcSetVehicle(ActiveVehicle.netIdentity);
     }

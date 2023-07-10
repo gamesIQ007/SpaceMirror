@@ -72,4 +72,11 @@ public class Destructible : NetworkBehaviour
             Destroy(gameObject);
         }
     }
+
+
+    /// <summary>
+    /// Владелец
+    /// </summary>
+    [SyncVar]
+    public NetworkIdentity Owner;
 }

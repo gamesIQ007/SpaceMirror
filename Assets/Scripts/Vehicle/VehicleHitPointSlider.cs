@@ -4,12 +4,12 @@ using UnityEngine.UI;
 /// <summary>
 /// Отображение слайдера со здоровьем
 /// </summary>
-public class UIHitPointSlider : MonoBehaviour
+public class VehicleHitPointSlider : MonoBehaviour
 {
     /// <summary>
     /// Уничтожимый объект
     /// </summary>
-    [SerializeField] private Destructible m_Destructible;
+    [SerializeField] private Vehicle m_Vehicle;
 
     /// <summary>
     /// Изображение
@@ -26,15 +26,17 @@ public class UIHitPointSlider : MonoBehaviour
 
     private void Start()
     {
-        m_Destructible.HitPointChange += OnHitPointChange;
+        m_Vehicle.HitPointChange += OnHitPointChange;
 
-        m_Slider.maxValue = m_Destructible.MaxHitPoint;
-        m_Slider.value = m_Destructible.HitPoint;
+        m_FillImage.color = m_Vehicle.Owner.GetComponent<Player>().PlayerColor;
+
+        m_Slider.maxValue = m_Vehicle.MaxHitPoint;
+        m_Slider.value = m_Vehicle.HitPoint;
     }
 
     private void OnDestroy()
     {
-        m_Destructible.HitPointChange -= OnHitPointChange;
+        m_Vehicle.HitPointChange -= OnHitPointChange;
     }
 
     #endregion
