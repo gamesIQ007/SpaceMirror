@@ -67,9 +67,24 @@ public class Player : NetworkBehaviour
     {
         if (ActiveVehicle != null) return;
 
+        // Предотвращение спавна там, где уже что-то есть
+        if (Physics2D.OverlapCircleAll(transform.position, 1.0f).Length > 0)
+        {
+            for (int i = 0; i < NetworkSessionManager.Instance.SpawnPoints.Length; i++)
+            {
+                Collider2D collider = Physics2D.OverlapCircle(NetworkSessionManager.Instance.SpawnPoints[i].position, 1.0f);
+
+                if (collider == null)
+                {
+                    transform.position = NetworkSessionManager.Instance.SpawnPoints[i].position;
+                    break;
+                }
+            }
+        }
+
         GameObject playerVehicle = Instantiate(m_VehiclePrefab.gameObject, transform.position, Quaternion.identity);
         NetworkServer.Spawn(playerVehicle, netIdentity.connectionToClient);
-
+        
         ActiveVehicle = playerVehicle.GetComponent<Vehicle>();
         ActiveVehicle.Owner = netIdentity;
 

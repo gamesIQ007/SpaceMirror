@@ -2124,6 +2124,9 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
+  SpawnPoints:
+  - {fileID: 2099007329}
+  - {fileID: 2076703355}
 --- !u!1 &1069267567
 GameObject:
   m_ObjectHideFlags: 0

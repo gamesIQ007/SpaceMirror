@@ -19,4 +19,9 @@ public class NetworkSessionManager : NetworkManager
     /// Являемся клиентом?
     /// </summary>
     public bool IsClient => (mode == NetworkManagerMode.Host || mode == NetworkManagerMode.ClientOnly);
+
+    /// <summary>
+    /// Точки спавна
+    /// </summary>
+    public Transform[] SpawnPoints;
 }
