@@ -9,7 +9,7 @@ public class Player : NetworkBehaviour
     /// <summary>
     /// Префаб транспорта
     /// </summary>
-    [SerializeField] private Vehicle m_VehiclePrefab;
+    [SerializeField] private Vehicle[] m_VehiclePrefab;
 
     /// <summary>
     /// Цвет игрока
@@ -82,7 +82,7 @@ public class Player : NetworkBehaviour
             }
         }
 
-        GameObject playerVehicle = Instantiate(m_VehiclePrefab.gameObject, transform.position, Quaternion.identity);
+        GameObject playerVehicle = Instantiate(m_VehiclePrefab[Random.Range(0, m_VehiclePrefab.Length)].gameObject, transform.position, Quaternion.identity);
         NetworkServer.Spawn(playerVehicle, netIdentity.connectionToClient);
         
         ActiveVehicle = playerVehicle.GetComponent<Vehicle>();

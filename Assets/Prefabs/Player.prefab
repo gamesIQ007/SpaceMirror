@@ -49,7 +49,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  m_VehiclePrefab: {fileID: 2187603153497961437, guid: 60fbceda20934c1469f66b1a772177d8, type: 3}
+  m_VehiclePrefab:
+  - {fileID: 2187603153497961437, guid: 60fbceda20934c1469f66b1a772177d8, type: 3}
+  - {fileID: 2187603153497961437, guid: 9fd42dfeffb7c3d4b9afbf00afb5cf9c, type: 3}
 --- !u!114 &8846484679868557284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,4 +81,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb1254f268cadb44b9028227f81957b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TargetVehicle: {fileID: 0}
