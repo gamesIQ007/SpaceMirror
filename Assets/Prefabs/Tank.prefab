@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 2311001119971472194}
   - component: {fileID: 2187603153497961437}
   - component: {fileID: 3578682020890904016}
+  - component: {fileID: 6742789423851614347}
   - component: {fileID: 3477301231621235677}
   - component: {fileID: 5356637667479325066}
   - component: {fileID: 3900982521691820986}
@@ -728,8 +729,8 @@ MonoBehaviour:
   m_Thrust: 2500
   m_Mobility: 1250
   m_MaxLinearVelocity: 15
-  m_MaxAngularVelocity: 150
   m_Turret: {fileID: 3578682020890904016}
+  m_TurretRocket: {fileID: 6742789423851614347}
 --- !u!114 &3578682020890904016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,6 +748,23 @@ MonoBehaviour:
   syncInterval: 0
   m_Projectile: {fileID: 8425942400364155072, guid: 4c82cc8751e17594695e6fec0e739faf, type: 3}
   m_FireRate: 0.3
+--- !u!114 &6742789423851614347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045136433341670154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492a65f719614904db1e9066c13e2622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  m_Projectile: {fileID: 8425942400364155072, guid: e9472d3909546684890fd671c97dc71f, type: 3}
+  m_FireRate: 3
 --- !u!114 &3477301231621235677
 MonoBehaviour:
   m_ObjectHideFlags: 0

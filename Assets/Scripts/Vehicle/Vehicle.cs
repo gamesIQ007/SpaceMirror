@@ -40,6 +40,10 @@ public class Vehicle : Destructible
     /// Турель
     /// </summary>
     [SerializeField] private Turret m_Turret;
+    /// <summary>
+    /// Турель с ракетами
+    /// </summary>
+    [SerializeField] private Turret m_TurretRocket;
 
     /// <summary>
     /// Сохранённая ссылка на ригид
@@ -85,6 +89,14 @@ public class Vehicle : Destructible
     public void Fire()
     {
         m_Turret.CmdFire();
+    }
+
+    /// <summary>
+    /// Выстрел ракетой
+    /// </summary>
+    public void FireRocket()
+    {
+        m_TurretRocket.CmdFire();
     }
 
     #endregion

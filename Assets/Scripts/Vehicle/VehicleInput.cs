@@ -54,6 +54,11 @@ public class VehicleInput : MonoBehaviour
             m_Player.ActiveVehicle.Fire();
         }
 
+        if (Input.GetKey(KeyCode.RightControl))
+        {
+            m_Player.ActiveVehicle.FireRocket();
+        }
+
         m_Player.ActiveVehicle.ThrustControl = thrust;
 
         // Управление поворотом с клавиатуры
