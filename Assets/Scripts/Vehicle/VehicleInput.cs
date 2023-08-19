@@ -39,7 +39,6 @@ public class VehicleInput : MonoBehaviour
         if (m_Player.ActiveVehicle == null) return;
 
         float thrust = 0;
-        float torque = 0;
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -49,6 +48,17 @@ public class VehicleInput : MonoBehaviour
         {
             thrust = -1.0f;
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            m_Player.ActiveVehicle.Fire();
+        }
+
+        m_Player.ActiveVehicle.ThrustControl = thrust;
+
+        // Управление поворотом с клавиатуры
+        /*float torque = 0;
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             torque = 1.0f;
@@ -57,14 +67,22 @@ public class VehicleInput : MonoBehaviour
         {
             torque = -1.0f;
         }
+        
+        m_Player.ActiveVehicle.TorqueControl = torque;*/
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            m_Player.ActiveVehicle.Fire();
-        }
+        // Поворот в сторону курсора
+        Vector3 mousePosition = Input.mousePosition;
 
-        m_Player.ActiveVehicle.ThrustControl = thrust;
-        m_Player.ActiveVehicle.TorqueControl = torque;
+        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        worldMousePosition.z = m_Player.ActiveVehicle.transform.position.z;
+
+        Vector3 lookDirection = worldMousePosition - m_Player.ActiveVehicle.transform.position;
+        lookDirection.Normalize();
+
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90.0f;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        m_Player.ActiveVehicle.transform.rotation = rotation;
     }
 }
 

@@ -33,8 +33,8 @@ public class Vehicle : Destructible
     /// <summary>
     /// Максимальная вращательная скорость в градусах/сек.
     /// </summary>
-    [SerializeField] private float m_MaxAngularVelocity;
-    public float MaxAngularVelocity => m_MaxAngularVelocity;
+    //[SerializeField] private float m_MaxAngularVelocity;
+    //public float MaxAngularVelocity => m_MaxAngularVelocity;
 
     /// <summary>
     /// Турель
@@ -77,7 +77,7 @@ public class Vehicle : Destructible
     /// <summary>
     /// Управление вращательной тягой. От -1.0 до +1.0
     /// </summary>
-    public float TorqueControl { get; set; }
+    //public float TorqueControl { get; set; }
 
     /// <summary>
     /// Выстрел
@@ -98,7 +98,7 @@ public class Vehicle : Destructible
         m_Rigid.AddForce(ThrustControl * m_Thrust * transform.up * Time.fixedDeltaTime, ForceMode2D.Force);
         m_Rigid.AddForce(-m_Rigid.velocity * (m_Thrust / m_MaxLinearVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
 
-        m_Rigid.AddTorque(TorqueControl * m_Mobility * Time.fixedDeltaTime, ForceMode2D.Force);
-        m_Rigid.AddTorque(-m_Rigid.angularVelocity * (m_Mobility / m_MaxAngularVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
+        //m_Rigid.AddTorque(TorqueControl * m_Mobility * Time.fixedDeltaTime, ForceMode2D.Force);
+        //m_Rigid.AddTorque(-m_Rigid.angularVelocity * (m_Mobility / m_MaxAngularVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
     }
 }
